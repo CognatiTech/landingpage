@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Google tag (gtag.js) --> 
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PYB8C6RRRK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PYB8C6RRRK");
+    </script>
     <!-- Meta Tags Básicas -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,47 +71,55 @@
         <nav class="gap-3 md:flex hidden">
           <a
             class="hover:underline hover:underline-offset-4 hover:-translate-y-1 p-2"
-            href="#"
+            href="#inicio"
             >Inicio</a
           >
           <a
             class="hover:underline hover:underline-offset-4 hover:-translate-y-1 p-2"
-            href="#"
-            >Sobre nós</a
+            href="#servicos"
+            >Serviços</a
           >
           <a
             class="hover:underline hover:underline-offset-4 hover:-translate-y-1 p-2"
-            href="#"
-            >Serviços</a
+            href="#contato"
+            >Contato</a
           >
           <!-- <a href="#">Fale conosco</a> -->
         </nav>
         <a
           class="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg flex items-center gap-1"
           href="https://wa.me/5521979317341"
-          >
+        >
           <ion-icon name="logo-whatsapp" class="text-emerald-100"></ion-icon>
           <span class="text-emerald-50">Fale conosco</span>
         </a>
       </div>
     </header>
 
-    <main class="min-h-[90vh] px-1 flex items-center justify-center">
+    <main
+      class="min-h-[90vh] px-4 flex items-center justify-center"
+      id="inicio"
+    >
       <div
         class="flex items-center flex-col-reverse md:flex-row mt-8 justify-center gap-4"
       >
         <div class="max-w-lg">
-          <h3 class="text-sm text-yellow-600">Digital sem complicação</h3>
-          <h1 class="text-4xl font-bold text-yellow-500">
+          <h3 class="text-sm text-[#FF9800] text-center md:text-left">
+            Digital sem complicação
+          </h3>
+          <h1
+            class="text-4xl font-bold text-[#FF9800] text-center md:text-left"
+          >
             Cognati - Seu Parceiro na Jornada Digital
           </h1>
-          <h2>
+          <h2 class="text-center md:text-left">
             Na Cognati, somos mais do que uma software house. Somos seus
             parceiros na jornada digital, dedicados a transformar suas ideias em
             soluções que fazem a diferença.
           </h2>
-          <div>
-            <a href="https://wa.me/5521979317341"
+          <div class="flex justify-end md:justify-start">
+            <a
+              href="https://wa.me/5521979317341"
               class="mt-8 inline-flex items-center justify-center rounded-xl bg-green-600 py-3 px-6 font-dm text-base font-medium text-white shadow-lg shadow-green-400/75 transition-transform duration-200 ease-in-out hover:scale-[1.02]"
             >
               Entre em Contato
@@ -111,7 +133,7 @@
       </div>
     </main>
 
-    <section class="py-12">
+    <section class="py-12 px-4" id="servicos">
       <div>
         <h2 class="text-2xl font-medium text-center text-yellow-600 mb-4">
           Nossos Serviços
@@ -149,6 +171,39 @@
         </div>
       </div>
     </section>
+
+    <footer
+      class="px-4 py-6 bg-[#FF9800] text-lg border border-t-2 border-yellow-100 mt-40"
+      id="contato"
+    >
+      <div class="max-w-2xl m-auto">
+        <h2 class="text-xl font-bold mb-2 text-[#FF9800]">
+          Entre em Contato Conosco
+        </h2>
+        <p class="">
+          Se precisar de mais informações ou tiver alguma dúvida, nossa equipe
+          está à disposição para ajudar. Você pode nos contatar através dos
+          seguintes canais:
+        </p>
+        <br />
+        <span class="flex items-center gap-2"
+          ><ion-icon name="mail" class="text-yellow-50"></ion-icon> E-mail:
+          contato@cognati.tech</span
+        >
+        <span class="flex items-center gap-2"
+          ><ion-icon name="logo-whatsapp" class="text-yellow-50"></ion-icon>
+          Whatsapp:
+          <a
+            class="underline text-sky-600 hover:text-sky-400"
+            href="https://wa.me/5521979317341"
+          >
+            (21) 97931-7341
+          </a></span
+        >
+        <p class="text-xs mt-2">Estamos ansiosos para ouvir você!</p>
+        <h2 class="mt-16 text-center text-xs">🐝 Cognati Tech @2024</h2>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
