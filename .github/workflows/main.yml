@@ -7,31 +7,37 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    name: 🚀 Deploy para servidor via FTP
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: false
 
     steps:
-      # Step 1: Checkout the latest code from the repo
-      - name: Checkout code
+      # Step 1: Checkout the code
+      - name: 🛎️ Checkout do repositório
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js environment
-      - name: Setup Node.js
+      # Step 2: Setup Node.js
+      - name: ⚙️ Configurar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18" # Escolha a versão que você está usando no seu projeto
+          node-version: '18'
+          cache: 'npm' # Habilita cache automático de dependências
 
       # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
+      - name: 📦 Instalar dependências
+        run: npm ci # mais rápido e confiável que `npm install` para CI/CD
 
       # Step 4: Build the Vite project
-      - name: Build project
+      - name: 🏗️ Build do projeto Vite
         run: npm run build
 
-      - name: FTP Deploy Locaweb
+      # Step 5: Deploy via FTP apenas da pasta de build
+      - name: 📤 Deploy via FTP (somente /dist)
         uses: locaweb/ftp-deploy@1.0.0
         with:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist # upload somente da pasta de build
+          git-ftp-args: "--insecure" # opcional, útil se seu servidor FTP usa TLS não confiável
