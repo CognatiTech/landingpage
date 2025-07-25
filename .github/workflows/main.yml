@@ -39,5 +39,4 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist # upload somente da pasta de build
-          git-ftp-args: "--insecure" # opcional, útil se seu servidor FTP usa TLS não confiável
+          localDir: dist
